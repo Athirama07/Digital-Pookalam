@@ -2,23 +2,23 @@ import turtle
 import time
 import colorsys
 
-# --- Setup the screen ---
+
 screen = turtle.Screen()
 screen.title("Digital Pookalam")
 screen.bgcolor("white")
 screen.setup(width=800, height=800)
 
-# --- Create a turtle object ---
-t = turtle.Turtle()
-t.speed(0) # Set the fastest drawing speed
 
-# --- Function to draw a spirograph-like petal pattern ---
+t = turtle.Turtle()
+t.speed(0) 
+
+
 def draw_spiro_petals(t, size, repeat, start_angle):
     for i in range(repeat):
         t.circle(size)
         t.right(360 / repeat)
 
-# --- Function to draw a filled flower petal ---
+
 def draw_petal(t, size, color):
     t.color(color)
     t.begin_fill()
@@ -42,9 +42,7 @@ t.circle(r)
 t.penup()
 t.pensize(1)
 
-# --- Draw the main layers of the Pookalam ---
 
-# Layer 1: Outermost circle with spiral pattern
 t.penup()
 t.goto(0, -280)
 t.pendown()
@@ -58,7 +56,7 @@ t.end_fill()
 
 
 
-# Layer 2: Repeating circular petals
+
 num_petals = 39
 for i in range(num_petals):
     t.penup()
@@ -70,12 +68,12 @@ for i in range(num_petals):
 
 
 
-# Layer 4: Smaller repeating petals
+
 num_petals_small = 39
 for i in range(num_petals_small):
     t.penup()
     t.goto(0, 0)
-    t.setheading(i * (360 / num_petals_small) + 11.25) # Offset to fill gaps
+    t.setheading(i * (360 / num_petals_small) + 11.25) 
     t.forward(180)
     t.pendown()
     draw_petal(t, 80, "purple")
@@ -110,13 +108,6 @@ t.penup()
 t.pensize(1)
 
 
-
-
-
-    
-
-
-# Layer 5: Colorful mandala-like inner spiral
 t.penup()
 t.goto(0, 0)
 t.pendown()
@@ -131,7 +122,8 @@ for i in range(360):
 
 
 
-# --- Hide the turtle and display the result ---
+
 t.hideturtle()
-time.sleep(10) # Keeps the window open longer
+time.sleep(10) 
 turtle.done()
+
